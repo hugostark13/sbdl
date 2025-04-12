@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               sh 'py.test test_pytest_sbdl.py'
+               sh 'pytest test_pytest_sbdl.py'
             }
         }
         stage('Package') {
