@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               sh 'echo $PATH; pip3 run pytest'
+               sh 'pytest'
             }
         }
         stage('Package') {
