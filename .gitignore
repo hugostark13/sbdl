@@ -2,4 +2,4 @@ Pipfile
 Pipfile.lock
 venv
 .idea
-lib/__pycache__/
+lib/__pycache__/*
