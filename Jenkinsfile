@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-               sh 'pipenv run pytest'
+               sh 'pip3 run pytest'
             }
         }
         stage('Package') {
