@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh 'pipenv --python python3 sync'
+               sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt'
             }
         }
         stage('Test') {
