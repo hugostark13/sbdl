@@ -1,6 +1,7 @@
 import sys
 import uuid
 
+from datetime import datetime
 from pyspark.sql.functions import struct, col, to_json
 
 from lib import ConfigLoader, Utils, DataLoader, Transformations
@@ -8,12 +9,15 @@ from lib.logger import Log4j
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 3:
-        print("Usage: sbdl {local, qa, prod} {load_date} : Arguments are missing")
-        sys.exit(-1)
+    # if len(sys.argv) < 3:
+    #     print("Usage: sbdl {local, qa, prod} {load_date} : Arguments are missing")
+    #     sys.exit(-1)
 
-    job_run_env = sys.argv[1].upper()
-    load_date = sys.argv[2]
+    # job_run_env = sys.argv[1].upper()
+    # load_date = sys.argv[2]
+    job_run_env = "LOCAL"
+    load_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
     job_run_id = "SBDL-" + str(uuid.uuid4())
 
     print("Initializing SBDL Job in " + job_run_env + " Job ID: " + job_run_id)
